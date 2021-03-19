@@ -1,0 +1,24 @@
+{
+  "name": "kirbic-example-shop-nextjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "next start",
+    "build": "next build",
+    "dev": "next dev"
+  },
+  "dependencies": {
+    "@kirbic/nextjs": "^1.0.1",
+    "@kirbic/react": "^1.2.4",
+    "axios": "^0.21.1",
+    "next": "^10.0.9",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "swr": "^0.5.4"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.3",
+    "typescript": "^4.2.3"
+  }
+}
