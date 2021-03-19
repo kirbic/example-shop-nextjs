@@ -3,15 +3,17 @@ import { PriceActions } from "./PriceActions";
 
 export const Cart = () => {
   const { cart, hasItems, cart_delete } = useCart();
-  console.log(cart);
   if (hasItems) {
     return (
-      <div>
-        <div className="cart">
+      <div style={{ border: "1px solid red", padding: 20, marginTop: 10 }}>
+        <h2>Cart</h2>
+        <div className="cart" style={{ marginBottom: 20 }}>
           {cart.lines.map((item) => (
-            <div>
-              <p>Article: {item.product.name}</p>
-              <Price price={item.price} />
+            <div key={item.price.id}>
+              <p>
+                Article: {item.product.name}, Price ref: {item.price.name}
+              </p>
+              {item.quantity}x <Price price={item.price} />
               <PriceActions price_id={item.price.id} />
             </div>
           ))}

@@ -18,14 +18,16 @@ const fetcher = async (url) => {
 export const ProductsList = () => {
   const { data } = useSWR("/catalog/product", fetcher);
   return (
-    <div>
+    <div style={{ border: "1px solid blue", padding: 20, marginTop: 10 }}>
       <h2>Products list</h2>
       {data &&
         data.items.map((item) => (
           <div key={item.id}>
             <h3>{item.name}</h3>
             <p>{item.description}</p>
-            <PriceActions price_id={item.prices[0].id} />
+            {item.prices.map((price) => (
+              <PriceActions key={price.id} price_id={item.prices[0].id} />
+            ))}
           </div>
         ))}
     </div>
