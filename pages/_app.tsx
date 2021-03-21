@@ -1,12 +1,14 @@
 // pages/_app.js
 import React from "react";
-import { UserProvider, getAccessToken, getSession } from "@kirbic/nextjs";
+import { UserProvider, ssr_session } from "@kirbic/nextjs";
 import { CartContainer } from "@kirbic/react";
 
-function App({ Component, pageProps }) {
-  console.log(pageProps);
+function App({ Component, pageProps, kirbic_session }) {
+  // the kirbic_session loaded from ssr contains the user, an access_token and a permissions array
+  console.log(kirbic_session);
+
   return (
-    <UserProvider>
+    <UserProvider initialUser={kirbic_session.user}>
       <CartContainer shop_id={process.env.NEXT_PUBLIC_KIRBIC_SHOP}>
         <Component {...pageProps} />
       </CartContainer>
@@ -15,13 +17,9 @@ function App({ Component, pageProps }) {
 }
 
 App.getInitialProps = async ({ ctx: { req, res } }) => {
-  const session = getSession(req, res);
-  console.log("session");
-  console.log(session);
-  const token = getAccessToken(req, res);
-  console.log("token");
-  console.log(token);
-  return {};
+  // NOTE: Use the kirbic_session.access_token to do api requests
+  const kirbic_session = await ssr_session(req, res);
+  return { kirbic_session };
 };
 
 export default App;

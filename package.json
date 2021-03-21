@@ -9,7 +9,7 @@
     "dev": "next dev"
   },
   "dependencies": {
-    "@kirbic/nextjs": "^1.1.0",
+    "@kirbic/nextjs": "^1.1.4",
     "@kirbic/react": "^1.2.5",
     "axios": "^0.21.1",
     "next": "^10.0.9",
