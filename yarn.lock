@@ -365,10 +365,10 @@
     ts-node "^9.1.1"
     typescript "^4.2.3"
 
-"@kirbic/react@^1.2.8":
-  version "1.2.8"
-  resolved "https://registry.yarnpkg.com/@kirbic/react/-/react-1.2.8.tgz#d4690006b1dec9da756950034b34237c0a1adb31"
-  integrity sha512-YM5cH90dl9EYe2zmizhz2lQKZfMqWXZF7bOKt+kcjIj+W8sZbVaRo6ucNtGDw098pfgiDzBqX2nN/b/dX9ijRQ==
+"@kirbic/react@^1.2.9":
+  version "1.2.9"
+  resolved "https://registry.yarnpkg.com/@kirbic/react/-/react-1.2.9.tgz#753356c5d8c3ae902e6510f7ebe580f9e65536a3"
+  integrity sha512-p4BRSgXyPRxxJxRdVUw+OUoez4rSaECesxbjPu3CG8PFjuo8kqzF8aGDruYMJ1bmvOBQjjhXD+nLzCkJAHpDng==
   dependencies:
     "@kirbic/types" "^1.0.3"
     "@pika/plugin-build-types" "^0.9.2"
