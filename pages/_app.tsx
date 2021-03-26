@@ -3,7 +3,7 @@ import React from "react";
 import { UserProvider, ssr_session } from "@kirbic/nextjs";
 import { CartContainer } from "@kirbic/react";
 
-function App({ Component, pageProps, kirbic_session }) {
+const App = ({ Component, pageProps, kirbic_session }) => {
   // the kirbic_session loaded from ssr contains the user, an access_token and a permissions array
   console.log(kirbic_session);
 
@@ -14,11 +14,11 @@ function App({ Component, pageProps, kirbic_session }) {
       </CartContainer>
     </UserProvider>
   );
-}
+};
 
-App.getInitialProps = async ({ ctx: { req, res } }) => {
+App.getInitialProps = async ({ ctx }) => {
   // NOTE: Use the kirbic_session.access_token to do api requests
-  const kirbic_session = await ssr_session(req, res);
+  const kirbic_session = await ssr_session(ctx);
   return { kirbic_session };
 };
 

@@ -1,6 +1,7 @@
 import useSWR from "swr";
 import axios from "axios";
 import { PriceActions } from "./PriceActions";
+import Link from "next/link";
 
 const kirbic_api = axios.create({
   baseURL: "https://api.kirbic.com",
@@ -22,12 +23,13 @@ export const ProductsList = () => {
       <h2>Products list</h2>
       {data &&
         data.items.map((item) => (
-          <div key={item.id}>
+          <div className="product" key={item.id}>
             <h3>{item.name}</h3>
             <p>{item.description}</p>
             {item.prices.map((price) => (
               <PriceActions key={price.id} price_id={item.prices[0].id} />
             ))}
+            <Link href={`/product/${item.slug}`}>See product details</Link>
           </div>
         ))}
     </div>

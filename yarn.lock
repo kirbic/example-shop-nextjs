@@ -347,10 +347,10 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@kirbic/nextjs@^1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@kirbic/nextjs/-/nextjs-1.1.4.tgz#2c90dfe82d60937879e36550d84db62f81480707"
-  integrity sha512-u4x0GPAFFk2D0HKuVUj+WTnGu3DssQJoqDHqZ7NHshyg1RDuYcP5uS9LabjBaG6zGvWAPiK6lF78CPek6BUQyQ==
+"@kirbic/nextjs@^1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@kirbic/nextjs/-/nextjs-1.1.5.tgz#e13a98397f82952dae76742ec352863ef1c2e06c"
+  integrity sha512-XNtiWDHJpYh8+DutBcoNwXq7jF5BKaxAAMXOhxsGOOjeLsEdgyUU4nQzvZyco8hfVixPCCfHPa6l5/HogJ6u7w==
   dependencies:
     "@auth0/nextjs-auth0" "^1.2.0"
     jsonwebtoken "^8.5.1"
