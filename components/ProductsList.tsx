@@ -2,6 +2,7 @@ import useSWR from "swr";
 import axios from "axios";
 import { PriceActions } from "./PriceActions";
 import Link from "next/link";
+import { Image } from "@kirbic/react";
 
 const kirbic_api = axios.create({
   baseURL: "https://api.kirbic.com",
@@ -18,12 +19,14 @@ const fetcher = async (url) => {
 
 export const ProductsList = () => {
   const { data } = useSWR("/catalog/product", fetcher);
+  console.log(data);
   return (
     <div style={{ border: "1px solid blue", padding: 20, marginTop: 10 }}>
       <h2>Products list</h2>
       {data &&
         data.items.map((item) => (
           <div className="product" key={item.id}>
+            <Image media_id={item.media.media_default.id} />
             <h3>{item.name}</h3>
             <p>{item.description}</p>
             {item.prices.map((price) => (
