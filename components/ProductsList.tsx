@@ -26,7 +26,11 @@ export const ProductsList = () => {
       {data &&
         data.items.map((item) => (
           <div className="product" key={item.id}>
-            <Image media_id={item.media.media_default.id} />
+            <Image
+              media_id={item.media.media_default.id}
+              width={200}
+              height={200}
+            />
             <h3>{item.name}</h3>
             <p>{item.description}</p>
             {item.prices.map((price) => (
