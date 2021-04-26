@@ -2,7 +2,7 @@ import { useCart, Price } from "@kirbic/react";
 import { PriceActions } from "./PriceActions";
 
 export const Cart = () => {
-  const { cart, hasItems, cart_delete } = useCart();
+  const { cart, hasItems, cart_delete, redirect_to_checkout } = useCart();
   if (hasItems) {
     return (
       <div style={{ border: "1px solid red", padding: 20, marginTop: 10 }}>
@@ -19,6 +19,9 @@ export const Cart = () => {
           ))}
         </div>
         <button onClick={() => cart_delete()}>CLEAR ENTIRE CART</button>
+        <div style={{ marginTop: 40 }}>
+          <button onClick={() => redirect_to_checkout()}>CHECKOUT</button>
+        </div>
       </div>
     );
   } else {
